@@ -1,0 +1,29 @@
+{
+  "name": "festivalmusica_inicio",
+  "version": "1.0.0",
+  "description": "Proyecto con Gulp y SASS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JereLoza/Desarrollo-web-Proyecto-4.git"
+  },
+  "keywords": [
+    "Gulp",
+    "SASS",
+    "Web",
+    "Design"
+  ],
+  "author": "Alex Jeremías Loza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JereLoza/Desarrollo-web-Proyecto-4/issues"
+  },
+  "homepage": "https://github.com/JereLoza/Desarrollo-web-Proyecto-4#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0"
+  }
+}
