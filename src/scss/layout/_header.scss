@@ -1,0 +1,34 @@
+.header {
+    background-color: $verde;
+    .contenido-header {
+        padding: $separacion / 2 0;
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        } // El mixin se agrega con @include y el nombre del mixin
+        // Al poner los parametros dentro de la llave, se almacenan en el @content del mixin
+    }
+    h1 {
+        color: $blanco;
+        margin-bottom: 1rem;
+        text-align: center;
+        @include tablet {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.navegacion-principal {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    a {
+        color: $blanco;
+        font-size: 2rem;
+        &:hover {
+            // Con el & usa el selector padre
+            color: $amarillo;
+        }
+    }
+}
