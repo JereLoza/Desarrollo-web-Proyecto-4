@@ -1,0 +1,19 @@
+@mixin telefono {
+    // Crea una "funcion" en Sass
+    // En caso de tener parametros se pone parentesis, si no, no.
+    @media (min-width: $telefono) {
+        @content; // Almacena el contenido acá que se pase por propiedad
+    }
+}
+
+@mixin tablet {
+    @media (min-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $desktop) {
+        @content;
+    }
+}
