@@ -3,6 +3,10 @@
 @import 'base/variables'; // Importo la hoja de estilos de varibales.
 @import 'base/mixins';
 @import 'base/globales';
+@import 'base/utilidades';
+
+
 @import 'layout/header';
 @import 'layout/video';
 @import 'layout/info';
+@import 'layout/lineup';

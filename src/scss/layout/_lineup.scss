@@ -1,0 +1,76 @@
+.lineup {
+    background-color: $rosa;
+    padding: $separacion 0;
+
+    h3, p {
+        text-align: center;
+        color: $blanco;
+    }
+
+    .dia {
+        text-transform: uppercase;
+        margin: $separacion 0;
+    }
+}
+
+.escenarios-conetenedor{
+    @include tablet {
+        @include grid (2, $separacion);
+    }
+
+    .escenario {
+        padding-top: $separacion / 2;
+    }
+
+    .nombre-escenario {
+        color: $negro;
+        font-size: 2rem;
+        font-weight: $delgada;
+
+        &:after{
+            content: ''; // Sin el content no funciona el after
+            width: 20rem;
+            height: 10rem;
+            display: block;
+            margin: 2rem auto 0 auto; // Centra el b
+            background-size: 15rem; // Controla el tamaño de imagen de fondo
+            background-repeat: no-repeat; // No se repite la imagen
+            background-position: center center; // Alinea la imagen vertical y horizontalmente
+        }
+    }
+}
+
+.edm .nombre-escenario {
+    &:after {
+        background-image: url(../img/icono_edm.png);
+    }
+}
+
+.rock .nombre-escenario {
+    &:after {
+        background-image: url(../img/icono_rock.png);
+    }
+}
+
+.calendario {
+    padding: 0; // Elimino el padding
+    list-style: none; // saca los puntos de los li
+
+    li {
+        padding: $separacion / 2;
+        font-weight: $black;
+
+        span {
+            font-weight: $regular;
+        }
+    }
+}
+
+.bg-verde .calendario li:nth-child(odd) { // odd = numeros impares.
+    background-color: darken($verde, 10); // darken transforma un color dado, para hacerlo mas oscuro
+    // Tambien está lighten
+}
+
+.bg-amarillo .calendario li:nth-child(odd) { // odd = numeros impares.
+    background-color: darken($amarillo, 20);
+}
