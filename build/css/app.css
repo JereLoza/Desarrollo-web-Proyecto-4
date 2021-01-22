@@ -473,11 +473,54 @@ h3 {
   flex-direction: column;
   align-items: flex-start;
   color: #FFF;
-  font-size: 7rem;
+  font-size: 4rem;
+}
+
+@media (min-width: 768px) {
+  .contenido-video h2 {
+    font-size: 7rem;
+  }
 }
 
 .contenido-video h2 span {
   background-color: #F53756;
-  font-size: 2rem;
+  font-size: 1.2rem;
   padding: 1rem 2rem;
+}
+
+@media (min-width: 768px) {
+  .contenido-video h2 span {
+    font-size: 2rem;
+  }
+}
+
+.informacion {
+  padding: 5rem 0;
+}
+
+@media (min-width: 768px) {
+  .informacion {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+  }
+}
+
+.contenido-informacion {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contenido-informacion h2 {
+  font-size: 3rem;
+}
+
+.contenido-informacion .fecha {
+  color: #F53756;
+  font-weight: 700;
+}
+
+.contenido-informacion .texto {
+  line-height: 1.5;
 }
