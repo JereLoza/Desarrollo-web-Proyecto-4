@@ -4,12 +4,14 @@ const sass = require('gulp-sass');
 const imagemin = require('gulp-imagemin'); // Llamo a la dependencia image-min
 const notify = require('gulp-notify');
 const webp = require('gulp-webp');
+const concat = require('gulp-concat');
 
 // Funcion que compila SASS
 
 const paths = {
     imagenes: 'src/img/**/*',
-    scss: 'src/scss/**/*.scss' // No pasa nada porque los archivos que empiezan con _ pertenecen al app.scss
+    scss: 'src/scss/**/*.scss', // No pasa nada porque los archivos que empiezan con _ pertenecen al app.scss
+    js: 'src/js/**/*.js'
 }
 
 function css() {
@@ -26,6 +28,12 @@ function minificarcss() {
             outputStyle: 'compressed' // Con esto se pone el tipado comprimido
         }))
         .pipe(dest('./build/css'));
+}
+
+function javascript() {
+    return src(paths.js)
+        .pipe( concat('bundle.js') ) // Junta todos los archivos de js en este
+        .pipe( dest('./build/js') ); // Lo guarda en esta direccion
 }
 
 function imagenes() {
@@ -46,6 +54,7 @@ function watchArchivos() {
     watch(paths.scss, css); // En watch se pasa como primer parametro el archivo a escuchar y como segundo la accion a realizar.
     // Con el ** lee la carpeta actual
     // Con el * lee todos los archivos con esa extension
+    watch(paths.js, javascript); // Escucha los cambios de js
 }
 
 exports.css = css;
@@ -53,4 +62,4 @@ exports.minificarcss = minificarcss;
 exports.imagenes = imagenes;
 exports.watchArchivos = watchArchivos;
 
-exports.default = series( css, imagenes, versionWebp, watchArchivos );
+exports.default = series( css, javascript, imagenes, versionWebp, watchArchivos );
