@@ -12,6 +12,10 @@ html {
 body {
     font-family: $fuentePrincipal;
     font-size: 1.6rem;
+
+    &.fijar-body {
+        overflow: hidden; // No permite que se de scroll al abrir una imagen
+    }
 }
 
 p {
